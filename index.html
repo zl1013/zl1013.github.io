@@ -320,23 +320,17 @@
 
       
         
-          
-            <h1 id="JDK环境"><a href="#JDK环境" class="headerlink" title="JDK环境"></a>JDK环境</h1><ul>
-<li>从<a href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包" target="_blank" rel="noopener">https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包</a></li>
-<li>安装下载的JDK</li>
-<li>环境变量配置：<ul>
-<li>新建环境变量，变量名：“JAVA_HOME”，变量值：自己的JDK安装根目录（到JDK文件夹）</li>
-<li>如图：<img src="C:%5CUsers%5Czzl%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200323180438114.png" alt=""></li>
-</ul>
+          <h1 id="JDK环境"><a href="#JDK环境" class="headerlink" title="JDK环境"></a>JDK环境</h1><ul>
+<li><p>从<a href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包" target="_blank" rel="noopener">https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包</a></p>
 </li>
-<li>PATH新增<ul>
-<li>%JAVA_HOME%\bin</li>
-</ul>
-</li>
-<li>JDK1.5之后不必配置CLASS_PATH，因为：在java1.5之后，把当前目录（运行 java.class 时所在目录）当做了classpath路径，而编译后的.class文件和.java文件在同一目录下，所以不需要配置</li>
-</ul>
-
-          
+<li><p>安装下载的JDK</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -453,21 +447,20 @@
 
       
         
-          
-            <h1 id="idea安装"><a href="#idea安装" class="headerlink" title="idea安装"></a>idea安装</h1><h4 id="工欲善其事必先利其器"><a href="#工欲善其事必先利其器" class="headerlink" title="工欲善其事必先利其器"></a>工欲善其事必先利其器</h4><hr>
+          <h1 id="idea安装"><a href="#idea安装" class="headerlink" title="idea安装"></a>idea安装</h1><h4 id="工欲善其事必先利其器"><a href="#工欲善其事必先利其器" class="headerlink" title="工欲善其事必先利其器"></a>工欲善其事必先利其器</h4><hr>
 <h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><ul>
-<li>从idea官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a> 下载 IntelliJ IDEA Community<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5></li>
-<li>常规安装<h5 id="破解（请支持正版）"><a href="#破解（请支持正版）" class="headerlink" title="破解（请支持正版）"></a>破解（请支持正版）</h5></li>
-<li>百度云下载</li>
-<li>IntelliJ IDEA 补丁获取地址：<a href="https://pan.baidu.com/s/1Dwg6FoTkQ-Azt5I0isOMXg" target="_blank" rel="noopener">https://pan.baidu.com/s/1Dwg6FoTkQ-Azt5I0isOMXg</a>     提取码：l2te</li>
-<li>jar移动到IDEA安装目录下的\bin目录，</li>
-<li>修改文件   idea.exe.vmoptions  和  idea64.exe.vmoptions</li>
-<li>文件最下边添加：</li>
-<li>-javaagent:安装目录\bin\jar文件名</li>
-</ul>
-<p>ok！！！</p>
-
-          
+<li><p>从idea官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a> 下载 IntelliJ IDEA Community</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5></li>
+<li><p>常规安装</p>
+<h5 id="破解（请支持正版）"><a href="#破解（请支持正版）" class="headerlink" title="破解（请支持正版）"></a>破解（请支持正版）</h5></li>
+<li><p>百度云下载</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/24/Idea%E5%AE%89%E8%A3%85/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -746,16 +739,19 @@
 
       
         
-          
-            <h1 id="npm-使用国内镜像，解决卡顿"><a href="#npm-使用国内镜像，解决卡顿" class="headerlink" title="npm 使用国内镜像，解决卡顿"></a>npm 使用国内镜像，解决卡顿</h1><ul>
-<li>换成阿里源</li>
-<li>CMD 执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
-<li>验证命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry  &#x2F;&#x2F;返回https:&#x2F;&#x2F;registry.npm.taobao.org，说明镜像配置成功。</span><br></pre></td></tr></table></figure></li>
-<li>安装cnpm<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-OK！！！</li>
-</ul>
-
-          
+          <h1 id="npm-使用国内镜像，解决卡顿"><a href="#npm-使用国内镜像，解决卡顿" class="headerlink" title="npm 使用国内镜像，解决卡顿"></a>npm 使用国内镜像，解决卡顿</h1><ul>
+<li><p>换成阿里源</p>
+</li>
+<li><p>CMD 执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
+<li><p>验证命令</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/24/nodejs%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
