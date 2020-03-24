@@ -158,41 +158,6 @@
     
     
       <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/03/25/V2ray/" target="_self">
-          <img src="/img/index_img.jpg" srcset="/img/loading.gif" alt="V2ray"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/03/25/V2ray/">
-        <p class="h4 index-header">V2ray</p>
-      </a>
-
-      <a href="/2020/03/25/V2ray/">
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-25&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
         <a href="/2020/03/24/Git%E6%80%BB%E7%BB%93/" target="_self">
           <img src="/img/5.png" srcset="/img/loading.gif" alt="Git总结"
                class="index-img img-fluid rounded index-thumbnails">
@@ -425,19 +390,70 @@ npm config get registry  //返回https://registry.npm.taobao.org，说明镜像�
     </div>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_self">
+          <img src="/img/1.png" srcset="/img/loading.gif" alt="JDK环境配置"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <p class="h4 index-header">JDK环境配置</p>
+      </a>
+
+      <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">JDK环境
+从https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包
+
+安装下载的JDK
+
+环境变量配置：
+
+新建环境变量，变量名：“JAVA_HOME”，变量值：自己的JDK安装根目录（到JDK文件夹）
 
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
+PATH新增
+
+%JAVA_HOME%\bin
+
+
+JDK1.5之后不必配置CLASS_PATH，因为：在java1.5之后，把当前目录（运行 java.class 时所在目录）当做了classpath路径，而编译后的.class文件和.java文件在同一目录下，所以不需要配置
+
+
+</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-24&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Java/">Java</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
 
 
 
