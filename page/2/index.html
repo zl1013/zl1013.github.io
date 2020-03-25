@@ -17,7 +17,7 @@
   <meta name="description" content="人生不可以重来，但Git可以">
   <meta name="author" content="乍暖还寒">
   <meta name="keywords" content="">
-  <title>归档 - 乍暖还寒</title>
+  <title>乍暖还寒</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -44,7 +44,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -120,7 +120,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/archive.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center">
@@ -133,6 +133,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
         </div>
       </div>
     </div>
@@ -142,55 +146,82 @@
     
       <div class="container nopadding-md">
         <div class="py-5 z-depth-3" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 6 篇文章</p>
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2020</p>
     
-    <a href="/2020/03/25/V2ray/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">V2ray</span>
-      <span style="float: right;">03-25</span>
-    </a>
-  
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_self">
+          <img src="/img/1.png" srcset="/img/loading.gif" alt="JDK环境配置"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
     
-    <a href="/2020/03/24/Git%E6%80%BB%E7%BB%93/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Git总结</span>
-      <span style="float: right;">03-24</span>
-    </a>
-  
-    
-    <a href="/2020/03/24/%E8%B8%A9%E5%9D%91/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">“踩坑”之旅</span>
-      <span style="float: right;">03-24</span>
-    </a>
-  
-    
-    <a href="/2020/03/24/github+hexo/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Github+HEXO (win)</span>
-      <span style="float: right;">03-24</span>
-    </a>
-  
-    
-    <a href="/2020/03/24/nodejs%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">npm使用国内镜像，解决卡顿</span>
-      <span style="float: right;">03-24</span>
-    </a>
-  
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <p class="h4 index-header">JDK环境配置</p>
+      </a>
+
+      <a href="/2020/03/24/Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">JDK环境
+从https://www.oracle.com/java/technologies/javase-jdk8-downloads.html下载JDK安装包
+
+安装下载的JDK
+
+环境变量配置：
+
+新建环境变量，变量名：“JAVA_HOME”，变量值：自己的JDK安装根目录（到JDK文件夹）
+
+
+PATH新增
+
+%JAVA_HOME%\bin
+
+
+JDK1.5之后不必配置CLASS_PATH，因为：在java1.5之后，把当前目录（运行 java.class 时所在目录）当做了classpath路径，而编译后的.class文件和.java文件在同一目录下，所以不需要配置
+
+
 </div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-24&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Java/">Java</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/"><i class="fas fa-angle-double-right"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </span>
   </nav>
   
@@ -302,7 +333,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "在最深的绝望里，遇见最美丽的风景&nbsp;",
+        "人生不可以重来，但Git可以&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

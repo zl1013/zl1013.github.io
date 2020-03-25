@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>V2ray</title>
+    <link href="/2020/03/25/V2ray/"/>
+    <url>/2020/03/25/V2ray/</url>
+    
+    <content type="html"><![CDATA[<h1 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h1><h3 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h3><p><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code><br>ubuntu/debian 系统安装 Curl 方法: <code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br>centos 系统安装 Curl 方法: <code>yum update -y &amp;&amp; yum install curl -y</code><br>安装完成后，输入<code>v2ray</code> 即可管理 V2Ray</p><h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p><code>v2ray info</code> 查看 V2Ray 配置信息<br><code>v2ray config</code> 修改 V2Ray 配置<br><code>v2ray link</code> 生成 V2Ray 配置文件链接<br><code>v2ray infolink</code> 生成 V2Ray 配置信息链接<br><code>v2ray qr</code> 生成 V2Ray 配置二维码链接<br><code>v2ray ss</code> 修改 Shadowsocks 配置<br><code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息<br><code>v2ray ssqr</code> 生成 Shadowsocks 配置二维码链接<br><code>v2ray status</code> 查看 V2Ray 运行状态<br><code>v2ray start</code> 启动 V2Ray<br><code>v2ray stop</code> 停止 V2Ray<br><code>v2ray restart</code> 重启 V2Ray<br><code>v2ray log</code> 查看 V2Ray 运行日志<br><code>v2ray update</code> 更新 V2Ray<br><code>v2ray update.sh</code> 更新 V2Ray 管理脚本<br><code>v2ray uninstall</code> 卸载 V2Ray</p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>V2Ray 配置文件路径：<code>/etc/v2ray/config.json</code><br>Caddy 配置文件路径：<code>/etc/caddy/Caddyfile</code><br>脚本配置文件路径:<code>/etc/v2ray/233blog_v2ray_backup.conf</code></p><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><code>V2Ray： https://www.v2ray.com/</code><br><code>233boy: https://github.com/233boy/v2ray</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>V2ray</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Git总结</title>
     <link href="/2020/03/24/Git%E6%80%BB%E7%BB%93/"/>
     <url>/2020/03/24/Git%E6%80%BB%E7%BB%93/</url>
