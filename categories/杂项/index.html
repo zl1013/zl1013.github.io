@@ -1,14 +1,14 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/zzl_java/PicGo/raw/master/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://gitee.com/zzl_java/PicGo/raw/master/img/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,32 +19,32 @@
   <meta name="keywords" content="">
   <title>分类 - 杂项 - 乍暖还寒</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
 
 
-  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
 
 <link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
 
 <!-- 自定义样式保持在最底部 -->
 
 
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="乍暖还寒" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -64,54 +64,84 @@
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                
+                首页
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">归档</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                归档
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">分类</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                分类
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                
+                标签
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                关于
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">友链</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                友链
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -119,12 +149,12 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/category.png') no-repeat center center;
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/category.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
             </span>
@@ -141,7 +171,7 @@
   <main>
     
       <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board"
+        <div class="py-5" id="board"
           >
           
           <div class="container">
@@ -150,7 +180,7 @@
                 
 
 <div class="list-group">
-<!--  <p class="h4">共计 1 篇文章</p>-->
+  <p class="h4">共计 1 篇文章</p>
   <hr>
   
     
@@ -159,7 +189,7 @@
     
     <a href="/2020/03/24/%E8%B8%A9%E5%9D%91/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">“踩坑”之旅</span>
-      <span style="float: right;">03-24</span>
+      <time style="float: right;">03-24</time>
     </a>
   
 </div>
@@ -175,8 +205,8 @@
   </main>
 
   
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
     </a>
   
 
@@ -211,11 +241,36 @@
   <footer class="mt-5">
   <div class="text-center py-3">
     <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
       <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
     </div>
     
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
     
 
@@ -225,13 +280,16 @@
 
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
 <script  src="/js/main.js" ></script>
 
+<!-- Plugins -->
 
 
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
 
 
@@ -240,22 +298,11 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
 
-
-<!-- Plugins -->
-
-
-
-  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
 
 
 
@@ -267,7 +314,7 @@
         "分类 - 杂项&nbsp;",
       ],
       cursorChar: "_",
-      typeSpeed: 50,
+      typeSpeed: 70,
       loop: true,
     });
     typed.stop();
@@ -279,21 +326,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
 
 
   <script  src="/js/local-search.js" ></script>
@@ -301,24 +333,20 @@
     var path = "/local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
-      getSearchFile(path);
+      searchFunc(path, 'local-search-input', 'local-search-result');
       this.onclick = null
     }
   </script>
 
 
 
-  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
+
+
+
+
+
+
+
 
 
 

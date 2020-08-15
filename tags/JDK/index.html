@@ -17,20 +17,10 @@
   <meta name="description" content="人生不可以重来，但Git可以">
   <meta name="author" content="乍暖还寒">
   <meta name="keywords" content="">
-  <title>V2ray - 乍暖还寒</title>
+  <title>标签 - JDK - 乍暖还寒</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-  
-
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +44,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -160,7 +150,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/6.png') no-repeat center center;
+         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/tag.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -168,40 +158,6 @@
             <span class="h2" id="subtitle">
               
             </span>
-
-            
-              
-  <div class="mt-3 post-meta">
-    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-03-25 00:28" pubdate>
-      2020年3月25日 凌晨
-    </time>
-  </div>
-
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      241 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      3
-       分钟
-    </span>
-  
-
-  
-  
-</div>
 
             
           </div>
@@ -214,94 +170,37 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
+      <p class="h5">2020</p>
+    
+    <a href="/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Linux下JDK（JAVA环境）安装</span>
+      <time style="float: right;">05-24</time>
+    </a>
+  
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto" id="post">
-            <!-- SEO header -->
-            <h1 style="display: none">V2ray</h1>
-            
-            <div class="markdown-body" id="post-body">
-              <h1 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h1><h3 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h3><p><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code><br>ubuntu/debian 系统安装 Curl 方法: <code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br>centos 系统安装 Curl 方法: <code>yum update -y &amp;&amp; yum install curl -y</code><br>安装完成后，输入<code>v2ray</code> 即可管理 V2Ray</p>
-<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p><code>v2ray info</code> 查看 V2Ray 配置信息<br><code>v2ray config</code> 修改 V2Ray 配置<br><code>v2ray link</code> 生成 V2Ray 配置文件链接<br><code>v2ray infolink</code> 生成 V2Ray 配置信息链接<br><code>v2ray qr</code> 生成 V2Ray 配置二维码链接<br><code>v2ray ss</code> 修改 Shadowsocks 配置<br><code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息<br><code>v2ray ssqr</code> 生成 Shadowsocks 配置二维码链接<br><code>v2ray status</code> 查看 V2Ray 运行状态<br><code>v2ray start</code> 启动 V2Ray<br><code>v2ray stop</code> 停止 V2Ray<br><code>v2ray restart</code> 重启 V2Ray<br><code>v2ray log</code> 查看 V2Ray 运行日志<br><code>v2ray update</code> 更新 V2Ray<br><code>v2ray update.sh</code> 更新 V2Ray 管理脚本<br><code>v2ray uninstall</code> 卸载 V2Ray</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>V2Ray 配置文件路径：<code>/etc/v2ray/config.json</code><br>Caddy 配置文件路径：<code>/etc/caddy/Caddyfile</code><br>脚本配置文件路径:<code>/etc/v2ray/233blog_v2ray_backup.conf</code></p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><code>V2Ray： https://www.v2ray.com/</code><br><code>233boy: https://github.com/233boy/v2ray</code></p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/V2ray/">V2ray</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
-                    
-                  </div>
-                
+
               </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux下JDK（JAVA环境）安装</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2020/03/24/Git%E6%80%BB%E7%BB%93/">
-                        <span class="hidden-mobile">Git总结</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
   </main>
 
@@ -405,31 +304,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '#post-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -437,7 +311,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "V2ray&nbsp;",
+        "标签 - JDK&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -452,21 +326,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
 
 
   <script  src="/js/local-search.js" ></script>
@@ -480,20 +339,6 @@
   </script>
 
 
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
-      }
-    );
-  </script>
 
 
 

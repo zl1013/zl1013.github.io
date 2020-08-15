@@ -17,7 +17,7 @@
   <meta name="description" content="人生不可以重来，但Git可以">
   <meta name="author" content="乍暖还寒">
   <meta name="keywords" content="">
-  <title>V2ray - 乍暖还寒</title>
+  <title>使用PicGo + 码云 搭建属于自己的图床 - 乍暖还寒</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -160,7 +160,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/6.png') no-repeat center center;
+         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/2eface382c15dfe955d6d359bcc935ac--2495428174.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -173,8 +173,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-03-25 00:28" pubdate>
-      2020年3月25日 凌晨
+    <time datetime="2020-05-24 20:20" pubdate>
+      2020年5月24日 晚上
     </time>
   </div>
 
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      241 字
+      402 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -224,13 +224,50 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">V2ray</h1>
+            <h1 style="display: none">使用PicGo + 码云 搭建属于自己的图床</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h1><h3 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h3><p><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code><br>ubuntu/debian 系统安装 Curl 方法: <code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br>centos 系统安装 Curl 方法: <code>yum update -y &amp;&amp; yum install curl -y</code><br>安装完成后，输入<code>v2ray</code> 即可管理 V2Ray</p>
-<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p><code>v2ray info</code> 查看 V2Ray 配置信息<br><code>v2ray config</code> 修改 V2Ray 配置<br><code>v2ray link</code> 生成 V2Ray 配置文件链接<br><code>v2ray infolink</code> 生成 V2Ray 配置信息链接<br><code>v2ray qr</code> 生成 V2Ray 配置二维码链接<br><code>v2ray ss</code> 修改 Shadowsocks 配置<br><code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息<br><code>v2ray ssqr</code> 生成 Shadowsocks 配置二维码链接<br><code>v2ray status</code> 查看 V2Ray 运行状态<br><code>v2ray start</code> 启动 V2Ray<br><code>v2ray stop</code> 停止 V2Ray<br><code>v2ray restart</code> 重启 V2Ray<br><code>v2ray log</code> 查看 V2Ray 运行日志<br><code>v2ray update</code> 更新 V2Ray<br><code>v2ray update.sh</code> 更新 V2Ray 管理脚本<br><code>v2ray uninstall</code> 卸载 V2Ray</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>V2Ray 配置文件路径：<code>/etc/v2ray/config.json</code><br>Caddy 配置文件路径：<code>/etc/caddy/Caddyfile</code><br>脚本配置文件路径:<code>/etc/v2ray/233blog_v2ray_backup.conf</code></p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><code>V2Ray： https://www.v2ray.com/</code><br><code>233boy: https://github.com/233boy/v2ray</code></p>
+              <h1 id="使用PicGo-码云-搭建属于自己的图床"><a href="#使用PicGo-码云-搭建属于自己的图床" class="headerlink" title="使用PicGo + 码云 搭建属于自己的图床"></a>使用PicGo + 码云 搭建属于自己的图床</h1><blockquote>
+<p>七牛云图床虽然好用但是需要以备案的域名，正在用的途中赠送的域名失效，不得已转战 <code>PicGo + 码云</code></p>
+</blockquote>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul>
+<li><p>PicGo</p>
+<p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo作者GitHub地址</a></p>
+</li>
+<li><p>picgo-plugin-gitee-uploader插件</p>
+</li>
+</ul>
+<h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2. 插件"></a>2. 插件</h3><p>打开PicGo，选择最底下的插件设置，搜索gitee</p>
+<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134254.png" srcset="/img/loading.gif" alt="image-20200815134254521"></p>
+<p>两个其实都可以使用，这里我们安装第二个。</p>
+<h3 id="3-建立gitee（码云）图床库"><a href="#3-建立gitee（码云）图床库" class="headerlink" title="3. 建立gitee（码云）图床库"></a>3. 建立gitee（码云）图床库</h3><h4 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h4><ul>
+<li>输入一个仓库名称</li>
+<li>其次将仓库设为公开</li>
+<li>勾选使用Readme文件初始化这个仓库</li>
+</ul>
+<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135437.png" srcset="/img/loading.gif" alt="image-20200815135437430"></p>
+<h4 id="3-2-配置PicGo"><a href="#3-2-配置PicGo" class="headerlink" title="3.2 配置PicGo"></a>3.2 配置PicGo</h4><p>选择图床设置—&gt;gitee</p>
+<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134844.png" srcset="/img/loading.gif" alt="image-20200815134844543"></p>
+<ul>
+<li>repo：用户名/仓库名称，比如我自己的仓库zzl_java/MyPicGo，也可以直接复制仓库的url</li>
+<li>branch：分支，这里写上master</li>
+<li>token：填入码云的私人令牌</li>
+<li>path：路径，一般写上img</li>
+<li>customPath：提交消息，这一项和下一项customURL都不用填。在提交到码云后，会显示提交消息，插件默认提交的是 <code>Upload 图片名 by picGo - 时间</code></li>
+</ul>
+<p>这几个参数主要就是token的获取。其他的按照刚刚建的仓库填写就好。</p>
+<h4 id="3-3-获取token"><a href="#3-3-获取token" class="headerlink" title="3.3 获取token"></a>3.3 获取token</h4><ul>
+<li>登录进自己的码云，点击头像，进入设置</li>
+<li>找到左面安全设置的私人令牌</li>
+</ul>
+<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135306.png" srcset="/img/loading.gif" alt="image-20200815135306824"></p>
+<ul>
+<li>点击生成新令牌，把projects这一项勾上，其他的不用勾，然后提交</li>
+</ul>
+<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135226.png" srcset="/img/loading.gif" alt="image-20200815135226150"></p>
+<ul>
+<li>生成令牌后把令牌复制后粘贴到token中，这个token会在离开本页的时候不再显示。然后保存设置，并把这个设置为默认图床</li>
+</ul>
 
             </div>
             <hr>
@@ -240,7 +277,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/V2ray/">V2ray</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
                     
                   </div>
                 
@@ -248,7 +285,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                      <a class="hover-with-bg" href="/tags/PicGo/">PicGo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Gitee/">Gitee</a>
                     
                   </div>
                 
@@ -261,18 +300,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux下JDK（JAVA环境）安装</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/24/Git%E6%80%BB%E7%BB%93/">
-                        <span class="hidden-mobile">Git总结</span>
+                      <a href="/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/">
+                        <span class="hidden-mobile">Linux下JDK（JAVA环境）安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -437,7 +470,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "V2ray&nbsp;",
+        "使用PicGo + 码云 搭建属于自己的图床&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
