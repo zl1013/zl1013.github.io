@@ -17,13 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux下JDK安装及环境配置</title>
+    <link href="http://yoursite.com/2020/08/10/Linux%E4%B8%8BJDK%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2020/08/10/Linux%E4%B8%8BJDK%E5%AE%89%E8%A3%85/</id>
+    <published>2020-08-10T12:20:20.000Z</published>
+    <updated>2020-08-10T12:20:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h1><h2 id="准备JDK安装包"><a href="#准备JDK安装包" class="headerlink" title="准备JDK安装包"></a>准备JDK安装包</h2><p>我这⾥下载的是 <a href="https://download.oracle.com/otn/java/jdk/8u261-b12/a4634525489241b9a9e1aa73d9e118e6/jdk-8u261-linux-x64.tar.gz?AuthParam=1597465946_ba6eb0f7d55bd39c9a0d166c39dbceda" target="_blank" rel="noopener">jdk-8u261-linux-i586.tar.gz</a>，安装包，并将其直接放在了 <code>root</code> 目录下</p><h3 id="1-卸载已有的OPENJDK（如果有"><a href="#1-卸载已有的OPENJDK（如果有" class="headerlink" title="1. 卸载已有的OPENJDK（如果有)"></a>1. 卸载已有的OPENJDK（如果有)</h3><p>如果系统⾃带有 <code>OpenJDK</code> ，可以按照如下步骤提前卸载之。</p><p>⾸先查找已经安装的 <code>OpenJDK</code> 包：</p><pre><code class="hljs shell">rpm -qa | grep java</code></pre><p>如果有就将 java 开头的安装包均卸载即可:</p><pre><code class="hljs shell">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64... 省略 ...</code></pre><p>我这里没有，就可以直接下一步</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ ~]# rpm -qa | grep java[root@iZbp19oigcst5l5m3e6pdfZ ~]#</code></pre><h3 id="2-创建⽬录并解压"><a href="#2-创建⽬录并解压" class="headerlink" title="2. 创建⽬录并解压"></a>2. 创建⽬录并解压</h3><p>1、在<code>/usr/local/</code> 下创建 <code>java</code> ⽂件夹并进⼊</p><pre><code class="hljs shell">cd /usr/local/mkdir javacd java</code></pre><ol start="2"><li>将上⾯准备好的 JDK 安装包解压到 <code>/usr/local/java</code> 中即可</li></ol><pre><code class="hljs shell">tar -zxvf /root/jdk-8u261-linux-x64.tar.gz -C ./</code></pre><p>解压完之后，<code>/usr/local/java</code> ⽬录中会出现⼀个 <code>jdk1.8.0_261</code> 的⽬录</p><h3 id="3-配置JDK环境变量"><a href="#3-配置JDK环境变量" class="headerlink" title="3. 配置JDK环境变量"></a>3. 配置JDK环境变量</h3><p>编辑 <code>/etc/profile</code> ⽂件，在⽂件尾部加⼊如下 <code>JDK</code> 环境配置即可</p><pre><code class="hljs shell">JAVA_HOME=/usr/local/java/jdk1.8.0_261CLASSPATH=$JAVA_HOME/lib/PATH=$PATH:$JAVA_HOME/binexport PATH JAVA_HOME CLASSPATH</code></pre><p>然后执⾏如下命令让环境变量⽣效</p><pre><code class="hljs shell">source /etc/profile</code></pre><h3 id="4-验证JDK安装结果"><a href="#4-验证JDK安装结果" class="headerlink" title="4. 验证JDK安装结果"></a>4. 验证JDK安装结果</h3><p>输⼊如下命令即可检查安装结果：</p><pre><code class="hljs shell">java -versionjavac</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135617.png" srcset="/img/loading.gif" alt="image-20200815135617909"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JDK安装&quot;&gt;&lt;a href=&quot;#JDK安装&quot; class=&quot;headerlink&quot; title=&quot;JDK安装&quot;&gt;&lt;/a&gt;JDK安装&lt;/h1&gt;&lt;h2 id=&quot;准备JDK安装包&quot;&gt;&lt;a href=&quot;#准备JDK安装包&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux下Zookeeper安装</title>
     <link href="http://yoursite.com/2020/08/10/Linux%E4%B8%8BZookeeper%E5%AE%89%E8%A3%85/"/>
     <id>http://yoursite.com/2020/08/10/Linux%E4%B8%8BZookeeper%E5%AE%89%E8%A3%85/</id>
     <published>2020-08-10T12:20:20.000Z</published>
     <updated>2020-08-10T12:20:20.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ZOOKEEPER安装部署"><a href="#ZOOKEEPER安装部署" class="headerlink" title="ZOOKEEPER安装部署"></a>ZOOKEEPER安装部署</h1><h3 id="1-准备安装包"><a href="#1-准备安装包" class="headerlink" title="1. 准备安装包"></a>1. 准备安装包</h3><p>这⾥使⽤的是 <code>3.6.1</code> 版，下载的是 <code>apache-zookeeper-3.6.1-bin.tar.gz</code> 压缩包，并将其放在了 <code>/root</code> ⽬录下</p><h3 id="2-解压并安装"><a href="#2-解压并安装" class="headerlink" title="2. 解压并安装"></a>2. 解压并安装</h3><ul><li>在 <code>/usr/local/</code> 下创建 <code>zookeeper</code> ⽂件夹并进⼊</li></ul><pre><code class="hljs shell">cd /usr/local/mkdir zookeepercd zookeeper</code></pre><ul><li>将 <code>ZooKeeper</code> 安装包解压到  <code>/usr/local/zookeeper</code> 中即可</li></ul><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ zookeeper]# tar -zxvf /root/apache-zookeeper-3.6.1-bin.tar.gz -C ./</code></pre><h3 id="3-创建DATA⽬录"><a href="#3-创建DATA⽬录" class="headerlink" title="3. 创建DATA⽬录"></a>3. 创建DATA⽬录</h3><p>这⾥直接在 <code>/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</code> ⽬录中创建⼀个 <code>data</code> ⽬录</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815190426.png" srcset="/img/loading.gif" alt="image-20200815190426864"></p><p>等下该 <code>data</code> ⽬录地址要配到 <code>ZooKeeper</code> 的配置⽂件中：</p><h3 id="4-创建配置⽂件并修改"><a href="#4-创建配置⽂件并修改" class="headerlink" title="4. 创建配置⽂件并修改"></a>4. 创建配置⽂件并修改</h3><p>进⼊到 <code>zookeeper</code> 的 <code>conf</code> ⽬录，复制 <code>zoo_sample.cfg</code> 得到 <code>zoo.cfg</code> ：</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# cd conf/[root@iZbp19oigcst5l5m3e6pdfZ conf]# cp zoo_sample.cfg zoo.cfg</code></pre><p>修改配置⽂件 <code>zoo.cfg</code> ，将其中的 <code>dataDir</code> 修改为上⾯刚创建的 <code>data</code> ⽬录，其他选项可以按需配置</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191038.png" srcset="/img/loading.gif" alt="image-20200815191038266"></p><h3 id="5-启动ZOOKEEPER"><a href="#5-启动ZOOKEEPER" class="headerlink" title="5. 启动ZOOKEEPER"></a>5. 启动ZOOKEEPER</h3><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# ./bin/zkServer.sh start</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191259.png" srcset="/img/loading.gif" alt="image-20200815191259966"></p><p>启动后可以通过如下命令来检查启动后的状态：</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# ./bin/zkServer.sh status</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191436.png" srcset="/img/loading.gif" alt="image-20200815191436920"></p><p>从图中也可以看出zookeeper默认会绑定端⼝ <code>2181</code></p><h3 id="6-配置环境变量"><a href="#6-配置环境变量" class="headerlink" title="6. 配置环境变量"></a>6. 配置环境变量</h3><p>编辑配置⽂件：</p><pre><code class="hljs shell">vim /etc/profile</code></pre><p>尾部加⼊<code>ZooKeeper</code> 的 <code>bin</code> 路径配置即可</p><pre><code class="hljs properties"><span class="hljs-attr">export</span> <span class="hljs-string">ZOOKEEPER_HOME=/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=$PATH:$ZOOKEEPER_HOME/bin</span></code></pre><p>最后执⾏<code>source /etc/profile</code> 使环境变量⽣效即可</p><h3 id="7-设置开机⾃启"><a href="#7-设置开机⾃启" class="headerlink" title="7. 设置开机⾃启"></a>7. 设置开机⾃启</h3><p>⾸先进⼊ <code>/etc/rc.d/init.d</code> ⽬录，创建⼀个名为 <code>zookeeper</code> 的⽂件，并赋予执⾏权限</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# cd /etc/rc.d/init.d/[root@iZbp19oigcst5l5m3e6pdfZ init.d]# touch zookeeper[root@iZbp19oigcst5l5m3e6pdfZ init.d]# chmod +x zookeeper</code></pre><p>接下来编辑 <code>zookeeper</code> ⽂件，并在其中加⼊如下内容：</p><pre><code class="hljs properties"><span class="hljs-comment">#!/bin/bash</span><span class="hljs-comment">#chkconfig:- 20 90</span><span class="hljs-comment">#description:zookeeper</span><span class="hljs-comment">#processname:zookeeper</span><span class="hljs-attr">ZOOKEEPER_HOME</span>=<span class="hljs-string">/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</span><span class="hljs-attr">export</span> <span class="hljs-string">JAVA_HOME=/usr/local/java/jdk1.8.0_261 # 此处根据你的实际情况更换对应</span><span class="hljs-attr">case</span> <span class="hljs-string">$1 in</span> <span class="hljs-meta">start)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh start;;</span> <span class="hljs-meta">stop)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh stop;;</span> <span class="hljs-meta">status)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh status;;</span> <span class="hljs-meta">restart)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh restart;;</span> <span class="hljs-meta">*)</span> <span class="hljs-string">echo "require start|stop|status|restart" ;;</span><span class="hljs-attr">esac</span></code></pre><p>最后加⼊开机启动即可：</p><pre><code class="hljs shell">chkconfig --add zookeeperchkconfig zookeeper on</code></pre><p>如果系统⾃带有 <code>OpenJDK</code> ，可以按照如下步骤提前卸载之。</p><p>⾸先查找已经安装的 <code>OpenJDK</code> 包：</p><pre><code class="hljs shell">rpm -qa | grep java</code></pre><p>如果有就将 java 开头的安装包均卸载即可:</p><pre><code class="hljs shell">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64... 省略 ...</code></pre><p>我这里没有，就可以直接下一步</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ ~]# rpm -qa | grep java[root@iZbp19oigcst5l5m3e6pdfZ ~]#</code></pre><h3 id="2-创建⽬录并解压"><a href="#2-创建⽬录并解压" class="headerlink" title="2. 创建⽬录并解压"></a>2. 创建⽬录并解压</h3><p>1、在<code>/usr/local/</code> 下创建 <code>java</code> ⽂件夹并进⼊</p><pre><code class="hljs shell">cd /usr/local/mkdir javacd java</code></pre><ol start="2"><li>将上⾯准备好的 JDK 安装包解压到 <code>/usr/local/java</code> 中即可</li></ol><pre><code class="hljs shell">tar -zxvf /root/jdk-8u261-linux-x64.tar.gz -C ./</code></pre><p>解压完之后，<code>/usr/local/java</code> ⽬录中会出现⼀个 <code>jdk1.8.0_261</code> 的⽬录</p><h3 id="3-配置JDK环境变量"><a href="#3-配置JDK环境变量" class="headerlink" title="3. 配置JDK环境变量"></a>3. 配置JDK环境变量</h3><p>编辑 <code>/etc/profile</code> ⽂件，在⽂件尾部加⼊如下 <code>JDK</code> 环境配置即可</p><pre><code class="hljs shell">JAVA_HOME=/usr/local/java/jdk1.8.0_261CLASSPATH=$JAVA_HOME/lib/PATH=$PATH:$JAVA_HOME/binexport PATH JAVA_HOME CLASSPATH</code></pre><p>然后执⾏如下命令让环境变量⽣效</p><pre><code class="hljs shell">source /etc/profile</code></pre><h3 id="4-验证JDK安装结果"><a href="#4-验证JDK安装结果" class="headerlink" title="4. 验证JDK安装结果"></a>4. 验证JDK安装结果</h3><p>输⼊如下命令即可检查安装结果：</p><pre><code class="hljs shell">java -versionjavac</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135617.png" srcset="/img/loading.gif" alt="image-20200815135617909"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="ZOOKEEPER安装部署"><a href="#ZOOKEEPER安装部署" class="headerlink" title="ZOOKEEPER安装部署"></a>ZOOKEEPER安装部署</h1><h3 id="1-准备安装包"><a href="#1-准备安装包" class="headerlink" title="1. 准备安装包"></a>1. 准备安装包</h3><p>这⾥使⽤的是 <code>3.6.1</code> 版，下载的是 <code>apache-zookeeper-3.6.1-bin.tar.gz</code> 压缩包，并将其放在了 <code>/root</code> ⽬录下</p><h3 id="2-解压并安装"><a href="#2-解压并安装" class="headerlink" title="2. 解压并安装"></a>2. 解压并安装</h3><ul><li>在 <code>/usr/local/</code> 下创建 <code>zookeeper</code> ⽂件夹并进⼊</li></ul><pre><code class="hljs shell">cd /usr/local/mkdir zookeepercd zookeeper</code></pre><ul><li>将 <code>ZooKeeper</code> 安装包解压到  <code>/usr/local/zookeeper</code> 中即可</li></ul><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ zookeeper]# tar -zxvf /root/apache-zookeeper-3.6.1-bin.tar.gz -C ./</code></pre><h3 id="3-创建DATA⽬录"><a href="#3-创建DATA⽬录" class="headerlink" title="3. 创建DATA⽬录"></a>3. 创建DATA⽬录</h3><p>这⾥直接在 <code>/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</code> ⽬录中创建⼀个 <code>data</code> ⽬录</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815190426.png" srcset="/img/loading.gif" alt="image-20200815190426864"></p><p>等下该 <code>data</code> ⽬录地址要配到 <code>ZooKeeper</code> 的配置⽂件中：</p><h3 id="4-创建配置⽂件并修改"><a href="#4-创建配置⽂件并修改" class="headerlink" title="4. 创建配置⽂件并修改"></a>4. 创建配置⽂件并修改</h3><p>进⼊到 <code>zookeeper</code> 的 <code>conf</code> ⽬录，复制 <code>zoo_sample.cfg</code> 得到 <code>zoo.cfg</code> ：</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# cd conf/[root@iZbp19oigcst5l5m3e6pdfZ conf]# cp zoo_sample.cfg zoo.cfg</code></pre><p>修改配置⽂件 <code>zoo.cfg</code> ，将其中的 <code>dataDir</code> 修改为上⾯刚创建的 <code>data</code> ⽬录，其他选项可以按需配置</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191038.png" srcset="/img/loading.gif" alt="image-20200815191038266"></p><h3 id="5-启动ZOOKEEPER"><a href="#5-启动ZOOKEEPER" class="headerlink" title="5. 启动ZOOKEEPER"></a>5. 启动ZOOKEEPER</h3><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# ./bin/zkServer.sh start</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191259.png" srcset="/img/loading.gif" alt="image-20200815191259966"></p><p>启动后可以通过如下命令来检查启动后的状态：</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# ./bin/zkServer.sh status</code></pre><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815191436.png" srcset="/img/loading.gif" alt="image-20200815191436920"></p><p>从图中也可以看出zookeeper默认会绑定端⼝ <code>2181</code></p><h3 id="6-配置环境变量"><a href="#6-配置环境变量" class="headerlink" title="6. 配置环境变量"></a>6. 配置环境变量</h3><p>编辑配置⽂件：</p><pre><code class="hljs shell">vim /etc/profile</code></pre><p>尾部加⼊<code>ZooKeeper</code> 的 <code>bin</code> 路径配置即可</p><pre><code class="hljs properties"><span class="hljs-attr">export</span> <span class="hljs-string">ZOOKEEPER_HOME=/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=$PATH:$ZOOKEEPER_HOME/bin</span></code></pre><p>最后执⾏<code>source /etc/profile</code> 使环境变量⽣效即可</p><h3 id="7-设置开机⾃启"><a href="#7-设置开机⾃启" class="headerlink" title="7. 设置开机⾃启"></a>7. 设置开机⾃启</h3><p>⾸先进⼊ <code>/etc/rc.d/init.d</code> ⽬录，创建⼀个名为 <code>zookeeper</code> 的⽂件，并赋予执⾏权限</p><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ apache-zookeeper-3.6.1-bin]# cd /etc/rc.d/init.d/[root@iZbp19oigcst5l5m3e6pdfZ init.d]# touch zookeeper[root@iZbp19oigcst5l5m3e6pdfZ init.d]# chmod +x zookeeper</code></pre><p>接下来编辑 <code>zookeeper</code> ⽂件，并在其中加⼊如下内容：</p><pre><code class="hljs properties"><span class="hljs-comment">#!/bin/bash</span><span class="hljs-comment">#chkconfig:- 20 90</span><span class="hljs-comment">#description:zookeeper</span><span class="hljs-comment">#processname:zookeeper</span><span class="hljs-attr">ZOOKEEPER_HOME</span>=<span class="hljs-string">/usr/local/zookeeper/apache-zookeeper-3.6.1-bin</span><span class="hljs-attr">export</span> <span class="hljs-string">JAVA_HOME=/usr/local/java/jdk1.8.0_261 # 此处根据你的实际情况更换对应</span><span class="hljs-attr">case</span> <span class="hljs-string">$1 in</span> <span class="hljs-meta">start)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh start;;</span> <span class="hljs-meta">stop)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh stop;;</span> <span class="hljs-meta">status)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh status;;</span> <span class="hljs-meta">restart)</span> <span class="hljs-string">su root $ZOOKEEPER_HOME/bin/zkServer.sh restart;;</span> <span class="hljs-meta">*)</span> <span class="hljs-string">echo "require start|stop|status|restart" ;;</span><span class="hljs-attr">esac</span></code></pre><p>最后加⼊开机启动即可：</p><pre><code class="hljs shell">chkconfig --add zookeeperchkconfig zookeeper on</code></pre>]]></content>
     
     <summary type="html">
     
@@ -35,12 +63,12 @@
     </summary>
     
     
-      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
     
     
       <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
-      <category term="JDK" scheme="http://yoursite.com/tags/JDK/"/>
+      <category term="ZooKeeper" scheme="http://yoursite.com/tags/ZooKeeper/"/>
     
   </entry>
   
@@ -73,6 +101,32 @@
   </entry>
   
   <entry>
+    <title>Maven小结</title>
+    <link href="http://yoursite.com/2020/08/08/Maven/"/>
+    <id>http://yoursite.com/2020/08/08/Maven/</id>
+    <published>2020-08-08T12:20:20.000Z</published>
+    <updated>2020-08-08T12:20:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h3 id="1-maven常用命令"><a href="#1-maven常用命令" class="headerlink" title="1. maven常用命令"></a>1. maven常用命令</h3><ul><li><p>clean：     清理</p></li><li><p>compile：编译</p></li><li><p>test：        测试</p></li><li><p>package：打包</p></li><li><p>install：    安装</p></li></ul><h3 id="2-maven的依赖范围"><a href="#2-maven的依赖范围" class="headerlink" title="2. maven的依赖范围"></a>2. maven的依赖范围</h3><table><thead><tr><th>依赖范围</th><th>对于编译classpath有效</th><th>对于测试classpath有效</th><th>对于运行时classpath有效</th><th>例子</th></tr></thead><tbody><tr><td>compile</td><td>Y</td><td>Y</td><td>Y</td><td>spring-core</td></tr><tr><td>test</td><td>-</td><td>Y</td><td>-</td><td>Junit</td></tr><tr><td>provided</td><td>Y</td><td>Y</td><td>-</td><td>servlet-api</td></tr><tr><td>runtime</td><td>-</td><td>Y</td><td>Y</td><td>JDBC驱动</td></tr><tr><td>system</td><td>Y</td><td>Y</td><td>-</td><td>本地的，maven仓库之外的类库</td></tr></tbody></table><h3 id="3-maven的依赖传递"><a href="#3-maven的依赖传递" class="headerlink" title="3. maven的依赖传递"></a>3. maven的依赖传递</h3><h4 id="1-什么是依赖传递"><a href="#1-什么是依赖传递" class="headerlink" title="1. 什么是依赖传递"></a>1. 什么是依赖传递</h4><pre><code class="hljs dns">在maven中，依赖是可以传递的，假设存在三个项目，分别是项目<span class="hljs-keyword">A</span>，项目B以及项目C。假设C依赖B，B依赖<span class="hljs-keyword">A</span>，那么我们可以根据maven项目依赖的特征不难推出项目C也依赖<span class="hljs-keyword">A</span></code></pre><h4 id="2-什么是依赖冲突"><a href="#2-什么是依赖冲突" class="headerlink" title="2. 什么是依赖冲突"></a>2. 什么是依赖冲突</h4><pre><code class="hljs angelscript">由于依赖传递现象的存在， spring-webmvc 依赖 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span>，spring-aop 依赖 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span>，但是发现 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span> 加入到了工程中，而我们希望 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span> 加入工程。这就造成了依赖冲突</code></pre><h4 id="3-如何解决依赖冲突"><a href="#3-如何解决依赖冲突" class="headerlink" title="3. 如何解决依赖冲突"></a>3. 如何解决依赖冲突</h4><ul><li><p>使用maven提供的依赖调解原则 :</p><ul><li><p>第一声明者优先原则</p></li><li><p>路径近者优先原则</p></li></ul></li><li><p>排除依赖</p></li><li><p>锁定版本</p></li></ul><h5 id="3-1-依赖调节原则——第一声明者优先原则"><a href="#3-1-依赖调节原则——第一声明者优先原则" class="headerlink" title="3.1 依赖调节原则——第一声明者优先原则"></a>3.1 依赖调节原则——第一声明者优先原则</h5><pre><code class="hljs plain">在 pom 文件中定义依赖，以先声明的依赖为准。其实就是根据坐标导入的顺序来确定最终使用哪个传递过来的依赖</code></pre><h5 id="3-2-排除依赖"><a href="#3-2-排除依赖" class="headerlink" title="3.2 排除依赖"></a>3.2 排除依赖</h5><pre><code class="hljs plain">可以使用exclusions标签将传递过来的依赖排除出去</code></pre><h5 id="3-3-版本锁定"><a href="#3-3-版本锁定" class="headerlink" title="3.3 版本锁定"></a>3.3 版本锁定</h5><pre><code class="hljs gradle">采用直接锁定版本的方法确定依赖jar包的版本，版本锁定后则不考虑依赖的声明顺序或依赖的路径，以锁定的版本为准添加到工程中，此方法在企业开发中经常使用。版本锁定的使用方式：第一步：在dependencyManagement标签中锁定依赖的版本第二步：在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标①在dependencyManagement标签中锁定依赖的版本②在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Maven&quot;&gt;&lt;a href=&quot;#Maven&quot; class=&quot;headerlink&quot; title=&quot;Maven&quot;&gt;&lt;/a&gt;Maven&lt;/h1&gt;&lt;h3 id=&quot;1-maven常用命令&quot;&gt;&lt;a href=&quot;#1-maven常用命令&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="小结" scheme="http://yoursite.com/categories/%E5%B0%8F%E7%BB%93/"/>
+    
+    
+      <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot接收多个参数(Get)</title>
     <link href="http://yoursite.com/2020/08/08/SpringBoot%E6%8E%A5%E6%94%B6%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0(Get)/"/>
     <id>http://yoursite.com/2020/08/08/SpringBoot%E6%8E%A5%E6%94%B6%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0(Get)/</id>
@@ -97,32 +151,6 @@
       <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
     
       <category term="Get" scheme="http://yoursite.com/tags/Get/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maven小结</title>
-    <link href="http://yoursite.com/2020/08/08/Maven/"/>
-    <id>http://yoursite.com/2020/08/08/Maven/</id>
-    <published>2020-08-08T12:20:20.000Z</published>
-    <updated>2020-08-08T12:20:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h4 id="1-maven常用命令"><a href="#1-maven常用命令" class="headerlink" title="1. maven常用命令"></a>1. maven常用命令</h4><ul><li><p>clean：     清理</p></li><li><p>compile：编译</p></li><li><p>test：        测试</p></li><li><p>package：打包</p></li><li><p>install：    安装</p></li></ul><h4 id="2-maven的依赖范围"><a href="#2-maven的依赖范围" class="headerlink" title="2. maven的依赖范围"></a>2. maven的依赖范围</h4><table><thead><tr><th>依赖范围</th><th>对于编译classpath有效</th><th>对于测试classpath有效</th><th>对于运行时classpath有效</th><th>例子</th></tr></thead><tbody><tr><td>compile</td><td>Y</td><td>Y</td><td>Y</td><td>spring-core</td></tr><tr><td>test</td><td>-</td><td>Y</td><td>-</td><td>Junit</td></tr><tr><td>provided</td><td>Y</td><td>Y</td><td>-</td><td>servlet-api</td></tr><tr><td>runtime</td><td>-</td><td>Y</td><td>Y</td><td>JDBC驱动</td></tr><tr><td>system</td><td>Y</td><td>Y</td><td>-</td><td>本地的，maven仓库之外的类库</td></tr></tbody></table><h4 id="3-maven的依赖传递"><a href="#3-maven的依赖传递" class="headerlink" title="3. maven的依赖传递"></a>3. maven的依赖传递</h4><h6 id="1-什么是依赖传递"><a href="#1-什么是依赖传递" class="headerlink" title="1. 什么是依赖传递"></a>1. 什么是依赖传递</h6><pre><code class="hljs dns">在maven中，依赖是可以传递的，假设存在三个项目，分别是项目<span class="hljs-keyword">A</span>，项目B以及项目C。假设C依赖B，B依赖<span class="hljs-keyword">A</span>，那么我们可以根据maven项目依赖的特征不难推出项目C也依赖<span class="hljs-keyword">A</span></code></pre><h6 id="2-什么是依赖冲突"><a href="#2-什么是依赖冲突" class="headerlink" title="2. 什么是依赖冲突"></a>2. 什么是依赖冲突</h6><pre><code class="hljs angelscript">由于依赖传递现象的存在， spring-webmvc 依赖 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span>，spring-aop 依赖 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span>，但是发现 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span> 加入到了工程中，而我们希望 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span> 加入工程。这就造成了依赖冲突</code></pre><h6 id="3-如何解决依赖冲突"><a href="#3-如何解决依赖冲突" class="headerlink" title="3. 如何解决依赖冲突"></a>3. 如何解决依赖冲突</h6><ul><li><p>使用maven提供的依赖调解原则 :</p><ul><li><p>第一声明者优先原则</p></li><li><p>路径近者优先原则</p></li></ul></li><li><p>排除依赖</p></li><li><p>锁定版本</p></li></ul><ol><li>依赖调节原则——第一声明者优先原则</li></ol><pre><code class="hljs plain">在 pom 文件中定义依赖，以先声明的依赖为准。其实就是根据坐标导入的顺序来确定最终使用哪个传递过来的依赖</code></pre><ol start="2"><li>排除依赖</li></ol><pre><code class="hljs plain">可以使用exclusions标签将传递过来的依赖排除出去</code></pre><ol start="3"><li>版本锁定</li></ol><pre><code class="hljs gradle">采用直接锁定版本的方法确定依赖jar包的版本，版本锁定后则不考虑依赖的声明顺序或依赖的路径，以锁定的版本为准添加到工程中，此方法在企业开发中经常使用。版本锁定的使用方式：第一步：在dependencyManagement标签中锁定依赖的版本第二步：在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标①在dependencyManagement标签中锁定依赖的版本②在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Maven&quot;&gt;&lt;a href=&quot;#Maven&quot; class=&quot;headerlink&quot; title=&quot;Maven&quot;&gt;&lt;/a&gt;Maven&lt;/h1&gt;&lt;h4 id=&quot;1-maven常用命令&quot;&gt;&lt;a href=&quot;#1-maven常用命令&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-    
-      <category term="小结" scheme="http://yoursite.com/categories/%E5%B0%8F%E7%BB%93/"/>
-    
-    
-      <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
     
   </entry>
   
@@ -173,10 +201,10 @@
     </summary>
     
     
-      <category term="V2ray" scheme="http://yoursite.com/categories/V2ray/"/>
+      <category term="杂项" scheme="http://yoursite.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="V2ray" scheme="http://yoursite.com/tags/V2ray/"/>
     
   </entry>
   
@@ -254,7 +282,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="杂项" scheme="http://yoursite.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
       <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
@@ -284,10 +312,10 @@
     </summary>
     
     
-      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="杂项" scheme="http://yoursite.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+      <category term="node.js" scheme="http://yoursite.com/tags/node-js/"/>
     
   </entry>
   

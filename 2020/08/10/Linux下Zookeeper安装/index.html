@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      766 字
+      499 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      7
        分钟
     </span>
   
@@ -288,61 +288,6 @@ cd zookeeper</code></pre>
 <p>最后加⼊开机启动即可：</p>
 <pre><code class="hljs shell">chkconfig --add zookeeper
 chkconfig zookeeper on</code></pre>
-
-
-
-
-
-
-
-
-<p>如果系统⾃带有 <code>OpenJDK</code> ，可以按照如下步骤提前卸载之。</p>
-<p>⾸先查找已经安装的 <code>OpenJDK</code> 包：</p>
-<pre><code class="hljs shell">rpm -qa | grep java</code></pre>
-
-<p>如果有就将 java 开头的安装包均卸载即可:</p>
-<pre><code class="hljs shell">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64
-yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64
-
-... 省略 ...</code></pre>
-
-
-
-<p>我这里没有，就可以直接下一步</p>
-<pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ ~]# rpm -qa | grep java
-[root@iZbp19oigcst5l5m3e6pdfZ ~]#</code></pre>
-
-
-
-<h3 id="2-创建⽬录并解压"><a href="#2-创建⽬录并解压" class="headerlink" title="2. 创建⽬录并解压"></a>2. 创建⽬录并解压</h3><p>1、在<code>/usr/local/</code> 下创建 <code>java</code> ⽂件夹并进⼊</p>
-<pre><code class="hljs shell">cd /usr/local/
-mkdir java
-cd java</code></pre>
-
-<ol start="2">
-<li>将上⾯准备好的 JDK 安装包解压到 <code>/usr/local/java</code> 中即可</li>
-</ol>
-<pre><code class="hljs shell">tar -zxvf /root/jdk-8u261-linux-x64.tar.gz -C ./</code></pre>
-
-<p>解压完之后，<code>/usr/local/java</code> ⽬录中会出现⼀个 <code>jdk1.8.0_261</code> 的⽬录</p>
-<h3 id="3-配置JDK环境变量"><a href="#3-配置JDK环境变量" class="headerlink" title="3. 配置JDK环境变量"></a>3. 配置JDK环境变量</h3><p>编辑 <code>/etc/profile</code> ⽂件，在⽂件尾部加⼊如下 <code>JDK</code> 环境配置即可</p>
-<pre><code class="hljs shell">JAVA_HOME=/usr/local/java/jdk1.8.0_261
-CLASSPATH=$JAVA_HOME/lib/
-PATH=$PATH:$JAVA_HOME/bin
-export PATH JAVA_HOME CLASSPATH</code></pre>
-
-<p>然后执⾏如下命令让环境变量⽣效</p>
-<pre><code class="hljs shell">source /etc/profile</code></pre>
-
-<h3 id="4-验证JDK安装结果"><a href="#4-验证JDK安装结果" class="headerlink" title="4. 验证JDK安装结果"></a>4. 验证JDK安装结果</h3><p>输⼊如下命令即可检查安装结果：</p>
-<pre><code class="hljs shell">java -version
-
-javac</code></pre>
-
-
-
-<p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135617.png" srcset="/img/loading.gif" alt="image-20200815135617909"></p>
-
             </div>
             <hr>
             <div>
@@ -351,7 +296,7 @@ javac</code></pre>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
                     
                   </div>
                 
@@ -361,7 +306,7 @@ javac</code></pre>
                     
                       <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
                     
-                      <a class="hover-with-bg" href="/tags/JDK/">JDK</a>
+                      <a class="hover-with-bg" href="/tags/ZooKeeper/">ZooKeeper</a>
                     
                   </div>
                 
@@ -373,6 +318,12 @@ javac</code></pre>
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2020/08/10/Linux%E4%B8%8BJDK%E5%AE%89%E8%A3%85/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux下JDK安装及环境配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

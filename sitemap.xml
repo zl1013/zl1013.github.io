@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/08/10/Linux%E4%B8%8BJDK%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2020-08-10T12:20:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/10/Linux%E4%B8%8BZookeeper%E5%AE%89%E8%A3%85/</loc>
     
     <lastmod>2020-08-10T12:20:20.000Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/08/08/SpringBoot%E6%8E%A5%E6%94%B6%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0(Get)/</loc>
+    <loc>http://yoursite.com/2020/08/08/Maven/</loc>
     
     <lastmod>2020-08-08T12:20:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/08/08/Maven/</loc>
+    <loc>http://yoursite.com/2020/08/08/SpringBoot%E6%8E%A5%E6%94%B6%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0(Get)/</loc>
     
     <lastmod>2020-08-08T12:20:20.000Z</lastmod>
     
