@@ -17,7 +17,7 @@
   <meta name="description" content="人生不可以重来，但Git可以">
   <meta name="author" content="乍暖还寒">
   <meta name="keywords" content="">
-  <title>V2ray - 乍暖还寒</title>
+  <title>Maven小结 - 乍暖还寒</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -160,7 +160,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/6.png') no-repeat center center;
+         style="background: url('https://gitee.com/zzl_java/PicGo/raw/master/img/323491.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -173,8 +173,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-03-25 00:28" pubdate>
-      2020年3月25日 凌晨
+    <time datetime="2020-08-08 20:20" pubdate>
+      2020年8月8日 晚上
     </time>
   </div>
 
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      241 字
+      516 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      5
        分钟
     </span>
   
@@ -224,13 +224,109 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">V2ray</h1>
+            <h1 style="display: none">Maven小结</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h1><h3 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h3><p><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code><br>ubuntu/debian 系统安装 Curl 方法: <code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br>centos 系统安装 Curl 方法: <code>yum update -y &amp;&amp; yum install curl -y</code><br>安装完成后，输入<code>v2ray</code> 即可管理 V2Ray</p>
-<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p><code>v2ray info</code> 查看 V2Ray 配置信息<br><code>v2ray config</code> 修改 V2Ray 配置<br><code>v2ray link</code> 生成 V2Ray 配置文件链接<br><code>v2ray infolink</code> 生成 V2Ray 配置信息链接<br><code>v2ray qr</code> 生成 V2Ray 配置二维码链接<br><code>v2ray ss</code> 修改 Shadowsocks 配置<br><code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息<br><code>v2ray ssqr</code> 生成 Shadowsocks 配置二维码链接<br><code>v2ray status</code> 查看 V2Ray 运行状态<br><code>v2ray start</code> 启动 V2Ray<br><code>v2ray stop</code> 停止 V2Ray<br><code>v2ray restart</code> 重启 V2Ray<br><code>v2ray log</code> 查看 V2Ray 运行日志<br><code>v2ray update</code> 更新 V2Ray<br><code>v2ray update.sh</code> 更新 V2Ray 管理脚本<br><code>v2ray uninstall</code> 卸载 V2Ray</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>V2Ray 配置文件路径：<code>/etc/v2ray/config.json</code><br>Caddy 配置文件路径：<code>/etc/caddy/Caddyfile</code><br>脚本配置文件路径:<code>/etc/v2ray/233blog_v2ray_backup.conf</code></p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><code>V2Ray： https://www.v2ray.com/</code><br><code>233boy: https://github.com/233boy/v2ray</code></p>
+              <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h4 id="1-maven常用命令"><a href="#1-maven常用命令" class="headerlink" title="1. maven常用命令"></a>1. maven常用命令</h4><ul>
+<li><p>clean：     清理</p>
+</li>
+<li><p>compile：编译</p>
+</li>
+<li><p>test：        测试</p>
+</li>
+<li><p>package：打包</p>
+</li>
+<li><p>install：    安装</p>
+</li>
+</ul>
+<h4 id="2-maven的依赖范围"><a href="#2-maven的依赖范围" class="headerlink" title="2. maven的依赖范围"></a>2. maven的依赖范围</h4><table>
+<thead>
+<tr>
+<th>依赖范围</th>
+<th>对于编译classpath有效</th>
+<th>对于测试classpath有效</th>
+<th>对于运行时classpath有效</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>spring-core</td>
+</tr>
+<tr>
+<td>test</td>
+<td>-</td>
+<td>Y</td>
+<td>-</td>
+<td>Junit</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>servlet-api</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>JDBC驱动</td>
+</tr>
+<tr>
+<td>system</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>本地的，maven仓库之外的类库</td>
+</tr>
+</tbody></table>
+<h4 id="3-maven的依赖传递"><a href="#3-maven的依赖传递" class="headerlink" title="3. maven的依赖传递"></a>3. maven的依赖传递</h4><h6 id="1-什么是依赖传递"><a href="#1-什么是依赖传递" class="headerlink" title="1. 什么是依赖传递"></a>1. 什么是依赖传递</h6><pre><code class="hljs dns">在maven中，依赖是可以传递的，假设存在三个项目，分别是项目<span class="hljs-keyword">A</span>，项目B以及项目C。假设C依赖B，B依赖<span class="hljs-keyword">A</span>，那么我们可以根据maven项目依赖的特征不难推出项目C也依赖<span class="hljs-keyword">A</span></code></pre>
+
+<h6 id="2-什么是依赖冲突"><a href="#2-什么是依赖冲突" class="headerlink" title="2. 什么是依赖冲突"></a>2. 什么是依赖冲突</h6><pre><code class="hljs angelscript">由于依赖传递现象的存在， spring-webmvc 依赖 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span>，spring-aop 依赖 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span>，但是发现 spirng-beans<span class="hljs-number">-4.2</span><span class="hljs-number">.4</span> 加入到了工程中，而我们希望 spring-beans<span class="hljs-number">-5.0</span><span class="hljs-number">.2</span> 加入工程。这就造成了依赖冲突</code></pre>
+
+<h6 id="3-如何解决依赖冲突"><a href="#3-如何解决依赖冲突" class="headerlink" title="3. 如何解决依赖冲突"></a>3. 如何解决依赖冲突</h6><ul>
+<li><p>使用maven提供的依赖调解原则 :</p>
+<ul>
+<li><p>第一声明者优先原则</p>
+</li>
+<li><p>路径近者优先原则</p>
+</li>
+</ul>
+</li>
+<li><p>排除依赖</p>
+</li>
+<li><p>锁定版本</p>
+</li>
+</ul>
+<ol>
+<li>依赖调节原则——第一声明者优先原则</li>
+</ol>
+<pre><code class="hljs plain">在 pom 文件中定义依赖，以先声明的依赖为准。其实就是根据坐标导入的顺序来确定最终使用哪个传递过来的依赖</code></pre>
+
+<ol start="2">
+<li>排除依赖</li>
+</ol>
+<pre><code class="hljs plain">可以使用exclusions标签将传递过来的依赖排除出去</code></pre>
+
+<ol start="3">
+<li>版本锁定</li>
+</ol>
+<pre><code class="hljs gradle">采用直接锁定版本的方法确定依赖jar包的版本，版本锁定后则不考虑依赖的声明顺序或依赖的路径，以锁定的版本为准添加到工程中，此方法在企业开发中经常使用。
+
+版本锁定的使用方式：
+
+第一步：在dependencyManagement标签中锁定依赖的版本
+
+第二步：在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标
+
+①在dependencyManagement标签中锁定依赖的版本
+
+②在<span class="hljs-keyword">dependencies</span>标签中声明需要导入的maven坐标</code></pre>
 
             </div>
             <hr>
@@ -240,7 +336,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/V2ray/">V2ray</a>
+                      <a class="hover-with-bg" href="/categories/%E5%B0%8F%E7%BB%93/">小结</a>
                     
                   </div>
                 
@@ -248,7 +344,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                      <a class="hover-with-bg" href="/tags/Maven/">Maven</a>
                     
                   </div>
                 
@@ -261,9 +357,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/05/24/PicGo/">
+                      <a href="/2020/08/08/SpringBoot%E6%8E%A5%E6%94%B6%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0(Get)/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用PicGo + 码云 搭建属于自己的图床</span>
+                        <span class="hidden-mobile">SpringBoot接收多个参数(Get)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -271,8 +367,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/24/Git%E6%80%BB%E7%BB%93/">
-                        <span class="hidden-mobile">Git小结</span>
+                      <a href="/2020/05/24/PicGo/">
+                        <span class="hidden-mobile">使用PicGo + 码云 搭建属于自己的图床</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -411,7 +507,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "V2ray&nbsp;",
+        "Maven小结&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
