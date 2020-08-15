@@ -17,34 +17,6 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用PicGo + 码云 搭建属于自己的图床</title>
-    <link href="http://yoursite.com/2020/05/24/PicGo/"/>
-    <id>http://yoursite.com/2020/05/24/PicGo/</id>
-    <published>2020-05-24T12:20:20.000Z</published>
-    <updated>2020-05-24T12:20:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="使用PicGo-码云-搭建属于自己的图床"><a href="#使用PicGo-码云-搭建属于自己的图床" class="headerlink" title="使用PicGo + 码云 搭建属于自己的图床"></a>使用PicGo + 码云 搭建属于自己的图床</h1><blockquote><p>七牛云图床虽然好用但是需要以备案的域名，正在用的途中赠送的域名失效，不得已转战 <code>PicGo + 码云</code></p></blockquote><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul><li><p>PicGo</p><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo作者GitHub地址</a></p></li><li><p>picgo-plugin-gitee-uploader插件</p></li></ul><h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2. 插件"></a>2. 插件</h3><p>打开PicGo，选择最底下的插件设置，搜索gitee</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134254.png" srcset="/img/loading.gif" alt="image-20200815134254521"></p><p>两个其实都可以使用，这里我们安装第二个。</p><h3 id="3-建立gitee（码云）图床库"><a href="#3-建立gitee（码云）图床库" class="headerlink" title="3. 建立gitee（码云）图床库"></a>3. 建立gitee（码云）图床库</h3><h4 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h4><ul><li>输入一个仓库名称</li><li>其次将仓库设为公开</li><li>勾选使用Readme文件初始化这个仓库</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135437.png" srcset="/img/loading.gif" alt="image-20200815135437430"></p><h4 id="3-2-配置PicGo"><a href="#3-2-配置PicGo" class="headerlink" title="3.2 配置PicGo"></a>3.2 配置PicGo</h4><p>选择图床设置—&gt;gitee</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134844.png" srcset="/img/loading.gif" alt="image-20200815134844543"></p><ul><li>repo：用户名/仓库名称，比如我自己的仓库zzl_java/MyPicGo，也可以直接复制仓库的url</li><li>branch：分支，这里写上master</li><li>token：填入码云的私人令牌</li><li>path：路径，一般写上img</li><li>customPath：提交消息，这一项和下一项customURL都不用填。在提交到码云后，会显示提交消息，插件默认提交的是 <code>Upload 图片名 by picGo - 时间</code></li></ul><p>这几个参数主要就是token的获取。其他的按照刚刚建的仓库填写就好。</p><h4 id="3-3-获取token"><a href="#3-3-获取token" class="headerlink" title="3.3 获取token"></a>3.3 获取token</h4><ul><li>登录进自己的码云，点击头像，进入设置</li><li>找到左面安全设置的私人令牌</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135306.png" srcset="/img/loading.gif" alt="image-20200815135306824"></p><ul><li>点击生成新令牌，把projects这一项勾上，其他的不用勾，然后提交</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135226.png" srcset="/img/loading.gif" alt="image-20200815135226150"></p><ul><li>生成令牌后把令牌复制后粘贴到token中，这个token会在离开本页的时候不再显示。然后保存设置，并把这个设置为默认图床</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;使用PicGo-码云-搭建属于自己的图床&quot;&gt;&lt;a href=&quot;#使用PicGo-码云-搭建属于自己的图床&quot; class=&quot;headerlink&quot; title=&quot;使用PicGo + 码云 搭建属于自己的图床&quot;&gt;&lt;/a&gt;使用PicGo + 码云 搭建属于自己的图床&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="PicGo" scheme="http://yoursite.com/tags/PicGo/"/>
-    
-      <category term="Gitee" scheme="http://yoursite.com/tags/Gitee/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux下JDK（JAVA环境）安装</title>
     <link href="http://yoursite.com/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/"/>
     <id>http://yoursite.com/2020/05/24/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/</id>
@@ -70,6 +42,34 @@
       <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="JDK" scheme="http://yoursite.com/tags/JDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用PicGo + 码云 搭建属于自己的图床</title>
+    <link href="http://yoursite.com/2020/05/24/PicGo/"/>
+    <id>http://yoursite.com/2020/05/24/PicGo/</id>
+    <published>2020-05-24T12:20:20.000Z</published>
+    <updated>2020-05-24T12:20:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用PicGo-码云-搭建属于自己的图床"><a href="#使用PicGo-码云-搭建属于自己的图床" class="headerlink" title="使用PicGo + 码云 搭建属于自己的图床"></a>使用PicGo + 码云 搭建属于自己的图床</h1><blockquote><p>七牛云图床虽然好用但是需要以备案的域名，正在用的途中赠送的域名失效，不得已转战 <code>PicGo + 码云</code></p></blockquote><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul><li><p>PicGo</p><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo作者GitHub地址</a></p></li><li><p>picgo-plugin-gitee-uploader插件</p></li></ul><h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2. 插件"></a>2. 插件</h3><p>打开PicGo，选择最底下的插件设置，搜索gitee</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134254.png" srcset="/img/loading.gif" alt="image-20200815134254521"></p><p>两个其实都可以使用，这里我们安装第二个。</p><h3 id="3-建立gitee（码云）图床库"><a href="#3-建立gitee（码云）图床库" class="headerlink" title="3. 建立gitee（码云）图床库"></a>3. 建立gitee（码云）图床库</h3><h4 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h4><ul><li>输入一个仓库名称</li><li>其次将仓库设为公开</li><li>勾选使用Readme文件初始化这个仓库</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135437.png" srcset="/img/loading.gif" alt="image-20200815135437430"></p><h4 id="3-2-配置PicGo"><a href="#3-2-配置PicGo" class="headerlink" title="3.2 配置PicGo"></a>3.2 配置PicGo</h4><p>选择图床设置—&gt;gitee</p><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815134844.png" srcset="/img/loading.gif" alt="image-20200815134844543"></p><ul><li>repo：用户名/仓库名称，比如我自己的仓库zzl_java/MyPicGo，也可以直接复制仓库的url</li><li>branch：分支，这里写上master</li><li>token：填入码云的私人令牌</li><li>path：路径，一般写上img</li><li>customPath：提交消息，这一项和下一项customURL都不用填。在提交到码云后，会显示提交消息，插件默认提交的是 <code>Upload 图片名 by picGo - 时间</code></li></ul><p>这几个参数主要就是token的获取。其他的按照刚刚建的仓库填写就好。</p><h4 id="3-3-获取token"><a href="#3-3-获取token" class="headerlink" title="3.3 获取token"></a>3.3 获取token</h4><ul><li>登录进自己的码云，点击头像，进入设置</li><li>找到左面安全设置的私人令牌</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135306.png" srcset="/img/loading.gif" alt="image-20200815135306824"></p><ul><li>点击生成新令牌，把projects这一项勾上，其他的不用勾，然后提交</li></ul><p><img src="https://gitee.com/zzl_java/PicGo/raw/master/img/20200815135226.png" srcset="/img/loading.gif" alt="image-20200815135226150"></p><ul><li>生成令牌后把令牌复制后粘贴到token中，这个token会在离开本页的时候不再显示。然后保存设置，并把这个设置为默认图床</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用PicGo-码云-搭建属于自己的图床&quot;&gt;&lt;a href=&quot;#使用PicGo-码云-搭建属于自己的图床&quot; class=&quot;headerlink&quot; title=&quot;使用PicGo + 码云 搭建属于自己的图床&quot;&gt;&lt;/a&gt;使用PicGo + 码云 搭建属于自己的图床&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="PicGo" scheme="http://yoursite.com/tags/PicGo/"/>
+    
+      <category term="Gitee" scheme="http://yoursite.com/tags/Gitee/"/>
     
   </entry>
   
