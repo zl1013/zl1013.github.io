@@ -13,24 +13,29 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="centos 7安装JDK 1.8">
+  <meta name="description" content="使用docker安装MySQL">
   <meta name="author" content="zilong zhao">
   <meta name="keywords" content="">
-  <meta name="description" content="centos 7安装JDK 1.8">
+  <meta name="description" content="使用docker安装MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下JDK（JAVA环境）安装">
-<meta property="og:url" content="http://example.com/2021/09/19/%E6%95%99%E7%A8%8B/Linux%E4%B8%8BJDK%EF%BC%88JAVA%E7%8E%AF%E5%A2%83%EF%BC%89%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="docker安装mysql">
+<meta property="og:url" content="http://example.com/2021/09/27/Study/docker%E5%AE%89%E8%A3%85mysql/index.html">
 <meta property="og:site_name" content="追光者">
-<meta property="og:description" content="centos 7安装JDK 1.8">
+<meta property="og:description" content="使用docker安装MySQL">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-19T14:15:10.000Z">
-<meta property="article:modified_time" content="2021-09-21T03:43:44.131Z">
+<meta property="og:image" content="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker-mysql.png">
+<meta property="og:image" content="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker_logs_excemple.png">
+<meta property="og:image" content="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker_mysql_sql.png">
+<meta property="og:image" content="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/navicat_mysql.png">
+<meta property="article:published_time" content="2021-09-27T15:39:56.000Z">
+<meta property="article:modified_time" content="2021-09-27T15:52:57.603Z">
 <meta property="article:author" content="zilong zhao">
-<meta property="article:tag" content="JDK">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker-mysql.png">
   
-  <title>Linux下JDK（JAVA环境）安装 - 追光者</title>
+  <title>docker安装mysql - 追光者</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -188,7 +193,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Linux下JDK（JAVA环境）安装">
+            <span class="h2" id="subtitle" title="docker安装mysql">
               
             </span>
 
@@ -198,8 +203,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-19 22:15" pubdate>
-        2021年9月19日 晚上
+      <time datetime="2021-09-27 23:39" pubdate>
+        2021年9月27日 晚上
       </time>
     </span>
   
@@ -209,7 +214,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      861 字
+      1.4k 字
     </span>
   
 
@@ -218,7 +223,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      4 分钟
     </span>
   
 
@@ -255,44 +260,78 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux下JDK（JAVA环境）安装</h1>
+            <h1 style="display: none">docker安装mysql</h1>
             
             <div class="markdown-body">
-              <h1 id="Linux下JDK（JAVA环境）安装"><a href="#Linux下JDK（JAVA环境）安装" class="headerlink" title="Linux下JDK（JAVA环境）安装"></a>Linux下JDK（JAVA环境）安装</h1><blockquote>
-<p>注意：这⾥安装的是Oracle JDK</p>
+              <h1 id="Docker安装Mysql"><a href="#Docker安装Mysql" class="headerlink" title="Docker安装Mysql"></a>Docker安装Mysql</h1><blockquote>
+<p>使用docker安装MySQL</p>
 </blockquote>
-<h2 id="准备JDK安装包"><a href="#准备JDK安装包" class="headerlink" title="准备JDK安装包"></a>准备JDK安装包</h2><p>我这⾥下载的是 <a target="_blank" rel="noopener" href="https://download.oracle.com/otn/java/jdk/8u261-b12/a4634525489241b9a9e1aa73d9e118e6/jdk-8u261-linux-x64.tar.gz?AuthParam=1597465946_ba6eb0f7d55bd39c9a0d166c39dbceda">jdk-8u261-linux-i586.tar.gz</a>，安装包，并将其直接放在了 <code>root</code> 目录下</p>
-<h3 id="1-卸载已有的OPENJDK（如果有"><a href="#1-卸载已有的OPENJDK（如果有" class="headerlink" title="1. 卸载已有的OPENJDK（如果有)"></a>1. 卸载已有的OPENJDK（如果有)</h3><p>如果系统⾃带有 <code>OpenJDK</code> ，可以按照如下步骤提前卸载之。</p>
-<p>⾸先查找已经安装的 <code>OpenJDK</code> 包：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rpm -qa | grep java<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li><h3 id="搜索MySQL镜像"><a href="#搜索MySQL镜像" class="headerlink" title="搜索MySQL镜像"></a>搜索MySQL镜像</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker search mysql<br></code></pre></div></td></tr></table></figure>
 
-<p>如果有就将 java 开头的安装包均卸载即可:</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64<br>yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64<br><br>... 省略 ...<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li><h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker pull mysql<br></code></pre></div></td></tr></table></figure>
+
+<p>此命令默认安装最新版本，可通过 <a target="_blank" rel="noopener" href="https://hub.docker.com/">docker hub</a> 查看所有的历史版本</p>
+<p>如 <a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql">mysql</a> ：</p>
+<img src="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker-mysql.png" srcset="/img/loading.gif" lazyload alt="image-20210927224911889" style="zoom:100%;" />
 
 
 
-<p>我这里没有，就可以直接下一步</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@iZbp19oigcst5l5m3e6pdfZ ~]# rpm -qa | grep java<br>[root@iZbp19oigcst5l5m3e6pdfZ ~]# <br></code></pre></div></td></tr></table></figure>
+<p>如安装 <a target="_blank" rel="noopener" href="https://github.com/docker-library/mysql/blob/9e91c13e4147ab680e620d06fb16b505d6ea6bd1/5.7/Dockerfile.debian"><code>5.7.35</code></a>,可使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker pull mysql:5.7<br></code></pre></div></td></tr></table></figure>
 
+<p>拉取镜像成功之后可查看本地镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker images<br></code></pre></div></td></tr></table></figure>
 
+<ul>
+<li><h3 id="创建实例并运行"><a href="#创建实例并运行" class="headerlink" title="创建实例并运行"></a>创建实例并运行</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run -p 3306:3306 --name mysql -v /mydocker/mysql/conf:/etc/mysql/conf.d -v /mydocker/mysql/logs:/var/log/mysql -v /mydocker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci<br></code></pre></div></td></tr></table></figure>
 
-<h3 id="2-创建⽬录并解压"><a href="#2-创建⽬录并解压" class="headerlink" title="2. 创建⽬录并解压"></a>2. 创建⽬录并解压</h3><p>1、在<code> /usr/local/</code> 下创建 <code>java</code> ⽂件夹并进⼊</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /usr/local/<br>mkdir java<br>cd java<br></code></pre></div></td></tr></table></figure>
-
-<ol start="2">
-<li>将上⾯准备好的 JDK 安装包解压到 <code>/usr/local/java</code> 中即可</li>
+<p><strong>命令解释说明：</strong></p>
+<p><code> -p 3306:3306：</code>将主机的3306端口映射到docker容器的3306端口。<br><code> --name mysql：</code>运行服务名字<br><code> -v /mydocker/mysql/conf:/etc/mysql/conf.d ：</code>将主机/mydocker/mysql录下的conf/my.cnf 挂载到容器的 /etc/mysql/conf.d<br><code> -v /mydocker/mysql/logs:/var/log/mysql：</code>将主机/mydocker/mysql目录下的 logs 目录挂载到容器的 /logs。<br><code> -v /mydocker/mysql/data:/var/lib/mysql ：</code>将主机/mydocker/mysql目录下的data目录挂载到容器的 /var/lib/mysql<br><code> -e MYSQL_ROOT_PASSWORD=root：</code>初始化 root 用户的密码。<br><code>-d mysql:5.7 :</code>后台程序运行mysql5.7<br><code> --character-set-server=utf8mb4 ：</code>设置字符集<br><code> -collation-server=utf8mb4_unicode_ci：</code>设置校对集</p>
+<ol>
+<li>查看容器日志:</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -zxvf /root/jdk-8u261-linux-x64.tar.gz -C ./<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">查看容器ID</span><br>docker ps<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 26a457b944b7为容器ID</span> <br>docker logs -f -t --tail 100 26a457b944b7<br></code></pre></div></td></tr></table></figure>
 
-<p>解压完之后，<code> /usr/local/java</code> ⽬录中会出现⼀个 <code>jdk1.8.0_261</code> 的⽬录</p>
-<h3 id="3-配置JDK环境变量"><a href="#3-配置JDK环境变量" class="headerlink" title="3. 配置JDK环境变量"></a>3. 配置JDK环境变量</h3><p>编辑 <code>/etc/profile</code> ⽂件，在⽂件尾部加⼊如下 <code>JDK</code> 环境配置即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">JAVA_HOME=/usr/local/java/jdk1.8.0_261<br>CLASSPATH=$JAVA_HOME/lib/<br>PATH=$PATH:$JAVA_HOME/bin<br>export PATH JAVA_HOME CLASSPATH<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker_logs_excemple.png" srcset="/img/loading.gif" lazyload alt="image-20210927231834010"></p>
+<ol start="2">
+<li>进入容器内部查看</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 26a457b944b7为容器ID</span> <br>docker exec -it  26a457b944b7 /bin/bash<br></code></pre></div></td></tr></table></figure>
 
-<p>然后执⾏如下命令让环境变量⽣效</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">source /etc/profile<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/docker_mysql_sql.png" srcset="/img/loading.gif" lazyload alt="image-20210927232705848"></p>
+<ol start="3">
+<li>退出容器两种方式：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 输入：</span><br>exit 		 容器停止退出<br><span class="hljs-meta">#</span><span class="bash"> 键盘按键：</span><br>Ctrl+Q+P 	容器不停止退出<br></code></pre></div></td></tr></table></figure>
 
-<h3 id="4-验证JDK安装结果"><a href="#4-验证JDK安装结果" class="headerlink" title="4. 验证JDK安装结果"></a>4. 验证JDK安装结果</h3><p>输⼊如下命令即可检查安装结果：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">java -version<br><br>javac<br></code></pre></div></td></tr></table></figure>
+<p>然后就可以使用远程连接工具连接mysql数据库了</p>
+<p><img src="https://gitee.com/zzl_java/codingzhaoOSS/raw/master/codingzhao/pictures/main/navicat_mysql.png" srcset="/img/loading.gif" lazyload alt="image-20210927233453416"></p>
+<p>宿主机上备份数据库：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker exec 26a457b944b7 sh -c &#x27; exec mysqldump --all-databases -uroot -p&quot;root&quot; &#x27; &gt; /mydocker/mysql/all-databases.sql<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li><h3 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h3></li>
+</ul>
+<p>停止容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker stop 容器id<br></code></pre></div></td></tr></table></figure>
+
+<p>强制停止容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker kill 容器ID<br></code></pre></div></td></tr></table></figure>
+
+<p>删除容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker rm  [-f] 容器ID<br></code></pre></div></td></tr></table></figure>
+
+<p>删除所有容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker rm -f $(docker ps -a -q)<br>docker ps -a -q | xargs docker rm<br></code></pre></div></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -302,7 +341,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      <a class="hover-with-bg" href="/categories/Study/">Study</a>
                     
                   </div>
                 
@@ -310,9 +349,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/JDK/">JDK</a>
+                      <a class="hover-with-bg" href="/tags/Docker/">Docker</a>
                     
-                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
                     
                   </div>
                 
@@ -329,18 +368,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/26/JDK/Stream%E5%B8%B8%E7%94%A8API/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Stream常用API</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/19/%E6%95%99%E7%A8%8B/centOS8%E5%AE%89%E8%A3%85Docker/">
-                        <span class="hidden-mobile">CentOS 8安装Docker</span>
+                      <a href="/2021/09/26/JDK/Collections%E5%B8%B8%E7%94%A8API/">
+                        <span class="hidden-mobile">Collections常用API</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
