@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>nodejs安装及环境配置</title>
+    <link href="/2021/09/28/nodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <url>/2021/09/28/nodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Node-js安装及环境配置"><a href="#Node-js安装及环境配置" class="headerlink" title="Node.js安装及环境配置"></a>Node.js安装及环境配置</h1><blockquote><p>所有操作均在Win环境下</p></blockquote><h3 id="1、下载-Node-js-安装包，官网地址"><a href="#1、下载-Node-js-安装包，官网地址" class="headerlink" title="1、下载 Node.js 安装包，官网地址"></a>1、下载 Node.js 安装包，<a href="https://nodejs.org/zh-cn/download/">官网地址</a></h3><h3 id="2、-安装"><a href="#2、-安装" class="headerlink" title="2、 安装"></a>2、 安装</h3><p>我下载的**.msi**安装包，双击常规安装即可（nodejs已经集成npm）</p><p>安装完成后，cmd查看node以及npm版本信息</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 查看node版本</span><br>C:\Users\admin&gt;node -v<br>v14.17.6<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 查看npm版本</span><br>C:\Users\admin&gt;npm -v<br>6.14.15<br></code></pre></div></td></tr></table></figure><h3 id="3、设置全局模块时路径和缓存路径"><a href="#3、设置全局模块时路径和缓存路径" class="headerlink" title="3、设置全局模块时路径和缓存路径"></a>3、设置全局模块时路径和缓存路径</h3><p>nodejs安装目录下新建文件夹：<strong>node_global</strong>、<strong>node_cache</strong></p><p>cmd执行：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 设置全局安装路径</span><br>npm config set prefix &quot;nodejs安装路径\node_global&quot;<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 设置全局缓存路径</span><br>npm config set cache &quot;nodejs安装路径\node_cache&quot;<br></code></pre></div></td></tr></table></figure><h3 id="4、-测试"><a href="#4、-测试" class="headerlink" title="4、 测试"></a>4、 测试</h3><p>cmd执行：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install -g vue<br></code></pre></div></td></tr></table></figure><p>如果报错：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">C:\Users\admin&gt;npm install -g vue<br>npm ERR! code EPERM<br>npm ERR! syscall mkdir<br>npm ERR! path nodejs安装路径\node_cache\_cacache<br>npm ERR! errno -4048<br></code></pre></div></td></tr></table></figure><p>文件夹操作权限问题</p><p>直接鼠标右键点击nodejs文件夹 —&gt; 属性 —&gt;  安全 ，给当前登录用户赋权即可，然后重新执行命令</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">C:\Users\admin&gt;npm install -g vue<br>+ vue@2.6.14<br>added 1 package from 1 contributor in 3.4s<br></code></pre></div></td></tr></table></figure><p>这就可以了，打开我们设置的全局安装路径，就可以看到vue的文件夹了</p><h3 id="5、环境变量设置"><a href="#5、环境变量设置" class="headerlink" title="5、环境变量设置"></a>5、环境变量设置</h3><blockquote><p>因为全局模块可以在命令行中直接调用，因此还要在环境变量中设置一下</p></blockquote><p>新建环境变量 —&gt; 系统变量 NODE_PATH ，路径为 <code>nodejs安装路径\node_global\node_modules</code></p><p>然后，修改用户变量PATH中原有npm路径，变更为  <code>nodejs安装路径\node_global </code></p><blockquote><p>由于国内访问npm官方镜像源可能会过慢，我们设置下淘宝cnpm镜像源 <a href="https://npmmirror.com/">淘宝 NPM 镜像 </a></p></blockquote><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install -g cnpm --registry=https://registry.npmmirror.com<br></code></pre></div></td></tr></table></figure><h3 id="6、测试："><a href="#6、测试：" class="headerlink" title="6、测试："></a>6、测试：</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cnpm list<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Node.js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Docker在Win10上启动失败解决方法</title>
+    <link href="/2021/09/28/Docker%E5%9C%A8Win10%E4%B8%8A%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <url>/2021/09/28/Docker%E5%9C%A8Win10%E4%B8%8A%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Docker在Win10上启动失败解决方法"><a href="#Docker在Win10上启动失败解决方法" class="headerlink" title="Docker在Win10上启动失败解决方法"></a>Docker在Win10上启动失败解决方法</h1><h3 id="1、报错信息"><a href="#1、报错信息" class="headerlink" title="1、报错信息"></a>1、报错信息</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">Docker.ApiServices.WSL2.WslKernelUpdateNotInstalledException: 引发类型为“Docker.ApiServices.WSL2.WslKernelUpdateNotInstalledException”的异常。<br>   在 Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger log, Int32 expectedExitCode) 位置 C:\workspaces\PR-16360\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:行号 140<br>   在 Docker.Engines.WSL2.WSL2Provisioning.&lt;DeployDistroAsync&gt;d__17.MoveNext() 位置 C:\workspaces\PR-16360\src\github.com\docker\pinata\win\src\Docker.Engines\WSL2\WSL2Provisioning.cs:行号 168<br>--- 引发异常的上一位置中堆栈跟踪的末尾 ---<br>   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()<br>   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)<br>   在 Docker.Engines.WSL2.WSL2Provisioning.&lt;ProvisionAsync&gt;d__8.MoveNext() 位置 C:\workspaces\PR-16360\src\github.com\docker\pinata\win\src\Docker.Engines\WSL2\WSL2Provisioning.cs:行号 77<br>--- 引发异常的上一位置中堆栈跟踪的末尾 ---<br></code></pre></div></td></tr></table></figure><h3 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h3><p>打开网站  <a href="https://czf-net.xyz/res/">https://czf-net.xyz/res/</a></p><p>下载 <code>wsl.msi</code></p><p>安装</p><p>重启Docker解决！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Docker</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>docker安装mysql</title>
     <link href="/2021/09/27/Study/docker%E5%AE%89%E8%A3%85mysql/"/>
     <url>/2021/09/27/Study/docker%E5%AE%89%E8%A3%85mysql/</url>
@@ -101,9 +151,9 @@
     
     <tags>
       
-      <tag>Linux</tag>
-      
       <tag>Docker</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
